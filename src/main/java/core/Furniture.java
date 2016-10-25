@@ -11,7 +11,6 @@ public class Furniture extends Category {
     private furnitureType type;
     private int quantity,val;
     public double price;
-    Bill bill = new Bill();
 
 
 
@@ -21,14 +20,18 @@ public class Furniture extends Category {
         furn.put(furnitureType.TVUnit, 500);
     }
 
-    public Furniture(furnitureType type, int quantity){
+    public Furniture(furnitureType type, int quantity) throws Exception{
+
 
         this.type = type;
         this.quantity = quantity;
+        if(quantity == 0)
+            throw new Exception("Not valid");
         setMap();
         calculatePrice();
 
     }
+
 
     public void calculatePrice(){
 

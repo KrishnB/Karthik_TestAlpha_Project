@@ -8,21 +8,22 @@ import java.util.List;
 
 public class Category {
 
-    public List<Double> SelectedItems = new ArrayList<Double>();
+
 
      //static double totalPrice;
     int i=0;
     Bill bill = new Bill();
 
     public void calculateTotalPrice(double price, Categorytype categorytype){
-        //SelectedItems.add(price);
+        
         System.out.println("Order item:"+ categorytype + "  "+ "ItemPrice:" + price);
        }
 
-    public void displayBill(){
+    public double displayBill(){
 
         double totalPrice = bill.sendBill();
         System.out.println("The total price of items are:"+ totalPrice);
+        return totalPrice;
 
     }
 
